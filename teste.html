@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Widget Contador</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .widget {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .widget h1 {
+            margin-bottom: 20px;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .increase {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .decrease {
+            background-color: #f44336;
+            color: white;
+        }
+        .number {
+            font-size: 24px;
+            margin: 0 20px;
+            display: inline-block;
+            width: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="widget">
+        <h1>Contador</h1>
+        <div class="buttons">
+            <button class="decrease" onclick="changeNumber(-1)">-</button>
+            <div class="number" id="number">0</div>
+            <button class="increase" onclick="changeNumber(1)">+</button>
+        </div>
+    </div>
+
+    <script>
+        let count = 0;
+
+        function changeNumber(amount) {
+            count += amount;
+            document.getElementById('number').textContent = count;
+        }
+    </script>
+
+</body>
+</html>
